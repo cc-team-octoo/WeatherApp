@@ -1,2 +1,2 @@
-# WheatherApp
+# WeatherApp
 CodersCamp - Project#3
