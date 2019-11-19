@@ -1,0 +1,36 @@
+{
+  "name": "weatherapp",
+  "version": "0.0.0",
+  "description": "An app displaying the weather conditions in given cities or areas.",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo 'This is a test'",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "live": "webpack-dev-server --inline --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cc-team-octoo/WeatherApp.git"
+  },
+  "keywords": [
+    "weather",
+    "weather",
+    "forecast"
+  ],
+  "author": "cc-team-octoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cc-team-octoo/WeatherApp/issues"
+  },
+  "homepage": "https://github.com/cc-team-octoo/WeatherApp#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
