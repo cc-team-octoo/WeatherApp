@@ -12,37 +12,37 @@
 <body>
     <main>
         <h1>The most awesome Weather App ever created</h1>
-        <section>
+        <section class="section inputBox">
             <!-- input section -->
         </section>
-        <section>
-            <h2>City name</h2>
-            <div class="bigCard">
-                <div>
+        <section class="section outputBox">
+            <h2 id="js_cityName">City name</h2>
+            <div class="card bigCard">
+                <div class="bigCard__top">
                     <p>
                         <span id="js_midTemp">17</span>
                         °C
                     </p>
-                    <div>
-                        <p>04.12</p>
-                        <p>Thursday</p>
+                    <div class="bigCard__date">
+                        <p id="js_date" class="highlight">04.12</p>
+                        <p id="js_day">Thursday</p>
                     </div>
-                    <p id="js_description">light intensity drizzle</p>
-                    <p><span id="js_minTemp">12</span>
-                        °C / 
-                        <span id="js_maxTemp">26</span>
-                        °C
-                    </p>
-                    <p id=js_pressure>pressure 1060hPa</p>
-                    <p id=js_humidity>humidity 70%</p>
                 </div>
+                <p id="js_description">light intensity drizzle</p>
+                <p><span id="js_minTemp" class="highlight">12</span>
+                    °C / 
+                    <span id="js_maxTemp" class="highlight">26</span>
+                    °C
+                </p>
+                <p>pressure <span id="js_pressure" class="highlight">1060</span>hPa</p>
+                <p>humidity <span id="js_humidity" class="highlight">70</span>%</p>
             </div>
             <div class="chart">
                 <!-- chart's place -->
             </div>
             <div class="smallCards">
-                    <!-- small card's place -->
-                </div>
+                <!-- small card's place -->
+            </div>
         </section>
     </main>
 </body>
