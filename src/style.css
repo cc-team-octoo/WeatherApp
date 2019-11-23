@@ -11,6 +11,12 @@ body {
     padding: 20px;
 }
 
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+}
+
 .section {
     width: 90vw;
     max-width: 1200px;
@@ -48,6 +54,10 @@ p {
     font-size: 2rem;
 }
 
+.bigCard {
+    max-width: 280px;
+}
+
 .bigCard__top {
     display: flex;
     justify-content: space-evenly;
@@ -55,5 +65,9 @@ p {
 }
 
 #js_midTemp {
-    font-size: 3.2rem;
+    font-size: 4.2rem;
+}
+
+#js_description {
+    font-size: 1.5rem;
 }
