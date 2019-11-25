@@ -93,6 +93,18 @@ p {
     cursor: pointer;
 }
 
+.cityInput {
+    position: relative;
+}
+
+.locationIcon {
+    position: absolute;
+    height: 1.2rem;
+    right: .5rem;
+    top: .8rem;
+    cursor: pointer;
+}
+
 /* waether cards */
 .card {
     background-color: #fafafa;
