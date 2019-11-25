@@ -14,16 +14,19 @@
         <h1>The most awesome Weather App ever created</h1>
         <section class="section inputBox">
             <div class="inputs">
-                <input type="text" class="input shortInput" id="js_countryCode" placeholder="Country code">
+                <input type="text" class="input shortInput" id="js_countryCode" placeholder="Country code" minlength="2" maxlength="2">
                 <p class="splitter">and</p>
-                <input type="text" class="input" id="js_cityName" placeholder="City name">
+                <div class="cityInput">             
+                    <input type="text" class="input" id="js_cityName" placeholder="City name" maxlength="15">
+                    <img src="./images/location.svg" class="locationIcon" alt="location icon">
+                </div>  
                 <p class="splitter">or</p>
                 <div class="latlonInputs">
                     <input type="text" class="input shortInput" id="js_longitude" placeholder="City longitude">
                     <input type="text" class="input shortInput" id="js_latitude" placeholder="City latitude">
                 </div>
                 <p class="splitter">or</p>
-                <input type="text" class="input shortInput" id="js_zipcode" placeholder="City ZIP code">
+                <input type="text" class="input shortInput" id="js_zipcode" placeholder="City ZIP code" minlength="5" maxlength="5">
             </div>
             <button type="button" class="button" id="js_searchBtn">Search</butoon>
         </section>
