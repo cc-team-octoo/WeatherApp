@@ -13,10 +13,15 @@
     <main>
         <h1>The most awesome Weather App ever created</h1>
         <section class="section inputBox">
-            <input type="text" class="input" id="js_cityName" placeholder="City name">
-            <input type="text" class="input" id="js_longitude" placeholder="City longitude">
-            <input type="text" class="input" id="js_latitude" placeholder="City latitude">
-            <button type="button" class="button" id="js_searchBtn">SEARCH</butoon>
+            <div class="inputs">
+                <input type="text" class="input" id="js_cityName" placeholder="City name">
+                <p class="splitter">OR</p>
+                <div class="latlonInputs">
+                    <input type="text" class="input shortInput" id="js_longitude" placeholder="City longitude">
+                    <input type="text" class="input shortInput" id="js_latitude" placeholder="City latitude">
+                </div>
+            </div>
+            <button type="button" class="button" id="js_searchBtn">Search</butoon>
         </section>
         <section class="section outputBox">
             <h2 id="js_currentCity">City name</h2>
