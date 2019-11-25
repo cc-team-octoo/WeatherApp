@@ -68,16 +68,16 @@ p {
     border: none;
     border-radius: 5px;
     width: 100%;
-    max-width: 350px;
+    max-width: 250px;
 }
 
 .shortInput {
-    max-width: 150px;
+    max-width: 120px;
 }
 
 .splitter {
     color: #fafafa;
-    width: 3rem;
+    margin: auto 1rem;
     text-align: center;
 }
 
