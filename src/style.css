@@ -41,6 +41,59 @@ p {
     margin: 1rem 0;
 }
 
+/* input area */
+.inputBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 20px;
+}
+
+@media (min-width: 940px) {
+    .inputBox {
+        align-items: center;
+    }
+}
+
+.inputs {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.input {
+    font-size: 1rem;
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.shortInput {
+    max-width: 150px;
+}
+
+.splitter {
+    color: #fafafa;
+    width: 3rem;
+    text-align: center;
+}
+
+.button {
+    margin: 5px;
+    padding: .5rem 1rem;
+    color: #fafafa;
+    font-size: 1.2rem;
+    background-color: var(--btncolor);
+    border: none;
+    border-radius: 5px;
+    height: fit-content;
+    cursor: pointer;
+}
+
+/* waether cards */
 .card {
     background-color: #fafafa;
     color: var(--bgcolor);
