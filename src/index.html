@@ -13,23 +13,18 @@
     <main>
         <h1>The most awesome Weather App ever created</h1>
         <section class="section inputBox">
-            <div class="inputs">
+            <form class="inputs">
                 <select type="text" class="input shortInput" id="js_countryCode"></select>
-                <select type="text" class="input shortInput" id="js_optSelect">
+                <select type="text" class="input" id="js_optSelect">
                     <option selected>City name</option>
                     <option>Geo coordinates</option>
                     <option>ZIP Code</option>
                 </select>
-                <div class="cityInput">             
-                    <input type="text" class="input" id="js_cityName" placeholder="Current city name" maxlength="15">
+                <div class="textInput">             
+                    <input type="text" class="input" id="js_textInput" placeholder="Jakiś placeholder" maxlength="15">
                     <img src="./images/location.svg" class="locationIcon" alt="location icon">
                 </div>
-                <div class="latlonInputs hidden">
-                    <input type="text" class="input shortInput" id="js_longitude" placeholder="City longitude">
-                    <input type="text" class="input shortInput" id="js_latitude" placeholder="City latitude">
-                </div>
-                <input type="text" class="input shortInput hidden" id="js_zipcode" placeholder="City ZIP code" minlength="5" maxlength="5">
-            </div>
+            </form>
             <button type="button" class="button" id="js_searchBtn">Search</butoon>
         </section>
         <section class="section outputBox">
