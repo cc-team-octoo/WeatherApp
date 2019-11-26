@@ -1,2 +1,3 @@
-const test = `test`;
-const test2 = 'test2';
+import countriesCodes from "./countriesCodes.js"
+
+countriesCodes()
