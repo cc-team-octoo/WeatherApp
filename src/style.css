@@ -42,21 +42,15 @@ p {
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 
 /* input area */
 .inputBox {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding: 10px 20px;
-}
-
-@media (min-width: 940px) {
-    .inputBox {
-        align-items: center;
-    }
 }
 
 .inputs {
@@ -73,15 +67,16 @@ p {
     border-radius: 5px;
     width: 100%;
     max-width: 250px;
+    margin-right: 1rem;
 }
 
 .shortInput {
-    max-width: 120px;
+    max-width: 80px;
 }
 
 .button {
     margin: 5px;
-    padding: .5rem 1rem;
+    padding: .5rem 1.2rem;
     color: #fafafa;
     font-size: 1.2rem;
     background-color: var(--btncolor);
@@ -91,7 +86,7 @@ p {
     cursor: pointer;
 }
 
-.cityInput {
+.textInput {
     position: relative;
 }
 
