@@ -1,5 +1,3 @@
-const countryCode = document.getElementById('js_countryCode');
-
 const countries = {
     "AF": "Afghanistan",
     "AX": "Aland Islands",
@@ -248,6 +246,7 @@ const countries = {
     "ZW": "Zimbabwe"
   };
 
+const countryCode = document.getElementById('js_countryCode');
 const countryCodesList = Object.keys(countries);
 const input1 = document.getElementById('js_textInput');
 const input2 = document.getElementById('js_textInput2');
@@ -267,15 +266,18 @@ function prepareInputs(inputType = 'City') {
         case 'City':
             input1.setAttribute('placeholder', 'Poznań')
             input2.classList.add('hidden');
+            countryCode.classList.remove('hidden');
             break;
         case 'ZipCode':
             input1.setAttribute('placeholder', '61-875')
             input2.classList.add('hidden');
+            countryCode.classList.remove('hidden');
             break;
         case 'Geo':
             input1.setAttribute('placeholder', 'Longitude:')
             input2.setAttribute('placeholder', 'Latitude:')
             input2.classList.remove('hidden');
+            countryCode.classList.add('hidden');
             break;
         default:
             console.log("Something's wrong with search option input")

@@ -110,7 +110,6 @@ Object(_countriesCodes_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var countryCode = document.getElementById('js_countryCode');
 var countries = {
   "AF": "Afghanistan",
   "AX": "Aland Islands",
@@ -358,6 +357,7 @@ var countries = {
   "ZM": "Zambia",
   "ZW": "Zimbabwe"
 };
+var countryCode = document.getElementById('js_countryCode');
 var countryCodesList = Object.keys(countries);
 var input1 = document.getElementById('js_textInput');
 var input2 = document.getElementById('js_textInput2');
@@ -379,17 +379,20 @@ function prepareInputs() {
     case 'City':
       input1.setAttribute('placeholder', 'Poznań');
       input2.classList.add('hidden');
+      countryCode.classList.remove('hidden');
       break;
 
     case 'ZipCode':
       input1.setAttribute('placeholder', '61-875');
       input2.classList.add('hidden');
+      countryCode.classList.remove('hidden');
       break;
 
     case 'Geo':
       input1.setAttribute('placeholder', 'Longitude:');
       input2.setAttribute('placeholder', 'Latitude:');
       input2.classList.remove('hidden');
+      countryCode.classList.add('hidden');
       break;
 
     default:
