@@ -1,5 +1,5 @@
 import getData from "./fetch.js"
-import showWheater from "./showWheater"
+import showWeather from "./showWheater"
 
 const apiKey=`4e687fa0129ef13f04e5dac8867f62ca`
 const askForData = (inputType="ZipCode",inputValue="") => {
@@ -8,15 +8,15 @@ const askForData = (inputType="ZipCode",inputValue="") => {
     switch (inputType) {
         case 'City':
             //pobiera pod względem miasta
-                getData(`http://api.openweathermap.org/data/2.5/forecast?q=London,us&appid=${apiKey}`,showWheater)
+                getData(`http://api.openweathermap.org/data/2.5/forecast?q=London,us&appid=${apiKey}`,showWeather)
           break;
         case 'ZipCode':
             //pobiera po kodzie
-                getData(`http://api.openweathermap.org/data/2.5/forecast?zip=61-222,pl&appid=${apiKey}`,showWheater)
+                getData(`http://api.openweathermap.org/data/2.5/forecast?zip=61-222,pl&appid=${apiKey}`,showWeather)
                 break;
           case 'Geo':
               //pobiera po współrzędnych
-                getData(`http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${apiKey}`,showWheater)
+                getData(`http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${apiKey}`,showWeather)
           break;
         default:
           console.log('test');

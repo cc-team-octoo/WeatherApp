@@ -18,7 +18,7 @@ const geolocation = () => {
             getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}`,showWheater)
             
         },
-        (error) => console.log(error, "Please allow to share you location")
+        (error) => console.log(error, "Please allow to share your location")
 )
 }
 export default geolocation
