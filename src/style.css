@@ -66,12 +66,38 @@ p {
     border: none;
     border-radius: 5px;
     width: 100%;
-    max-width: 250px;
+    max-width: 200px;
     margin-right: 1rem;
 }
 
+#js_countryCode {
+    max-width: 70px;
+}
+
+#js_textInput{
+    margin-right: 0;
+}
+
 .shortInput {
-    max-width: 80px;
+    max-width: 170px;
+}
+
+.textInput {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.textInput1 {
+    position: relative;
+    padding-right: 1rem;
+}
+
+.locationIcon {
+    position: absolute;
+    height: 1.2rem;
+    right: 1.2rem;
+    top: .8rem;
+    cursor: pointer;
 }
 
 .button {
@@ -83,18 +109,6 @@ p {
     border: none;
     border-radius: 5px;
     height: fit-content;
-    cursor: pointer;
-}
-
-.textInput {
-    position: relative;
-}
-
-.locationIcon {
-    position: absolute;
-    height: 1.2rem;
-    right: .5rem;
-    top: .8rem;
     cursor: pointer;
 }
 
