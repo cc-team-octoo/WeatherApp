@@ -3,7 +3,7 @@ import askForData from "./askForData"
 
 
 
-//geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu po załadowaniu domu uruchamiała się i wskakiwały ako pierwsze - użytkwonik ma domyślnie pogode dla swoej lokalizacji
+geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu po załadowaniu domu uruchamiała się i wskakiwały ako pierwsze - użytkwonik ma domyślnie pogode dla swoej lokalizacji
 
 
 
