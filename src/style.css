@@ -48,8 +48,8 @@ p {
 /* input area */
 .inputBox {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: column nowrap;
+    align-items: flex-end;
     padding: 10px 20px;
 }
 
@@ -57,6 +57,13 @@ p {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .inputBox {
+        flex-flow: row nowrap;
+        align-items: flex-end;
+    }
 }
 
 .input {
@@ -82,12 +89,12 @@ p {
     max-width: 180px;
 }
 
-.textInput {
+.dataInput {
     display: flex;
     flex-flow: row wrap;
 }
 
-.textInput1 {
+.inputContainer {
     position: relative;
     padding-right: 1rem;
 }
@@ -101,7 +108,7 @@ p {
 }
 
 .button {
-    margin: 5px;
+    margin: 5px 0;
     padding: .5rem 1.2rem;
     color: #fafafa;
     font-size: 1.2rem;
