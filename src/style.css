@@ -17,6 +17,22 @@ body {
     }
 }
 
+@media only screen and (max-width: 1200px) {    
+    .smallCard {
+        width: 50%;
+        padding: 2% 2%;
+    }
+}
+
+@media only screen and (max-width: 480px) {    
+    .smallCard {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Section */
+
 .section {
     width: 90vw;
     max-width: 1200px;
@@ -69,5 +85,34 @@ p {
 }
 
 #js_description {
+    font-size: 1.5rem;
+}
+
+/* Small Cards*/
+
+.smallCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 0 ;
+}
+
+.smallCard { 
+    width: 200px;
+    margin: 20px;  
+}
+
+.smallCard__top {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.smallDate {
+    font-size: 1.3rem;
+}
+
+.smallTemp {
     font-size: 1.5rem;
 }
