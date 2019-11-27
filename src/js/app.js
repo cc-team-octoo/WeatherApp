@@ -9,4 +9,4 @@ geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu
 
 //document.querySelector("jakiś super formularz").addEventListener("click",askForData())
 
-//askForData() - funkcja działa docelowo można sobie poprubować ZipCode City i GeoLocation
+askForData() //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
