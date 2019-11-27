@@ -367,6 +367,7 @@ var countriesCodes = function countriesCodes() {
   for (var i = 0; i < countryCodesList.length; i++) {
     var newOpt = new Option();
     newOpt.text = countryCodesList[i];
+    newOpt.value = countryCodesList[i];
     countryCode.add(newOpt);
     countryCodesList[i] === "PL" ? countryCode.options[i].selected = true : null;
   }

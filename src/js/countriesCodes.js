@@ -255,8 +255,9 @@ const optSelect = document.getElementById('js_optSelect');
 const countriesCodes = function() {
     for(let i=0; i < countryCodesList.length; i++){
         let newOpt = new Option;
-        newOpt.text = countryCodesList[i]
-        countryCode.add(newOpt)
+        newOpt.text = countryCodesList[i];
+        newOpt.value = countryCodesList[i];
+        countryCode.add(newOpt);
         countryCodesList[i] === "PL" ? countryCode.options[i].selected = true : null;
     }
 };
