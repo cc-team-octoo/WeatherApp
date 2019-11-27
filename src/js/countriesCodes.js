@@ -252,6 +252,7 @@ const input1 = document.getElementById('js_textInput');
 const input2 = document.getElementById('js_textInput2');
 const optSelect = document.getElementById('js_optSelect');
 
+//generate countries codes and put into country select input
 const countriesCodes = function() {
     for(let i=0; i < countryCodesList.length; i++){
         let newOpt = new Option;
@@ -262,6 +263,7 @@ const countriesCodes = function() {
     }
 };
 
+//set inputs attributes based on selected input type
 function prepareInputs(inputType = 'City') {
     switch(inputType) {
         case 'City':
@@ -284,7 +286,7 @@ function prepareInputs(inputType = 'City') {
             console.log("Something's wrong with search option input")
     }
 };
-
+//invoke the function at the very begining and then every on option change
 prepareInputs(optSelect.value)
 optSelect.addEventListener('change', e => prepareInputs(optSelect.value));
 
