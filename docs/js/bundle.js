@@ -359,6 +359,8 @@ var countries = {
   "ZW": "Zimbabwe"
 };
 var countryCodesList = Object.keys(countries);
+var input2 = document.getElementById('js_textInput2');
+var optSelect = document.getElementById('js_optSelect');
 
 var countriesCodes = function countriesCodes() {
   for (var i = 0; i < countryCodesList.length; i++) {
@@ -369,6 +371,14 @@ var countriesCodes = function countriesCodes() {
   }
 };
 
+function toggleHidden(el) {
+  optSelect.value === 'Geo coordinates' ? el.classList.remove('hidden') : el.classList.add('hidden');
+}
+
+;
+optSelect.addEventListener('change', function (e) {
+  return toggleHidden(input2);
+});
 /* harmony default export */ __webpack_exports__["default"] = (countriesCodes);
 
 /***/ })

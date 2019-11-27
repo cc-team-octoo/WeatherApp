@@ -1,4 +1,4 @@
-const countryCode = document.getElementById('js_countryCode')
+const countryCode = document.getElementById('js_countryCode');
 
 const countries = {
     "AF": "Afghanistan",
@@ -246,10 +246,11 @@ const countries = {
     "YE": "Yemen",
     "ZM": "Zambia",
     "ZW": "Zimbabwe"
-  }
+  };
 
 const countryCodesList = Object.keys(countries);
-
+const input2 = document.getElementById('js_textInput2');
+const optSelect = document.getElementById('js_optSelect');
 
 const countriesCodes = function() {
     for(let i=0; i < countryCodesList.length; i++){
@@ -258,7 +259,15 @@ const countriesCodes = function() {
         countryCode.add(newOpt)
         countryCodesList[i] === "PL" ? countryCode.options[i].selected = true : null;
     }
-}
+};
+
+function toggleHidden(el) {
+    optSelect.value === 'Geo coordinates' ?
+        el.classList.remove('hidden') :
+        el.classList.add('hidden');
+};
+
+optSelect.addEventListener('change', e => toggleHidden(input2));
 
 export default countriesCodes;
 
