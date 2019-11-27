@@ -14,9 +14,10 @@ const geolocation = () => {
             }
          
                 
-            //console.log(userPosition)
+            console.log("--Geolocation - fetch from user")
             getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}`,showWheater)
-            
+            getData(`http:api.openweathermap.org/data/2.5/weather?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}`,showCurrentWeather)
+            console.log("--------")
         },
         (error) => console.log(error, "Please allow to share your location")
 )
