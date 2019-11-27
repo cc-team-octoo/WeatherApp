@@ -359,6 +359,7 @@ var countries = {
   "ZW": "Zimbabwe"
 };
 var countryCodesList = Object.keys(countries);
+var input1 = document.getElementById('js_textInput');
 var input2 = document.getElementById('js_textInput2');
 var optSelect = document.getElementById('js_optSelect');
 
@@ -371,13 +372,35 @@ var countriesCodes = function countriesCodes() {
   }
 };
 
-function toggleHidden(el) {
-  optSelect.value === 'Geo coordinates' ? el.classList.remove('hidden') : el.classList.add('hidden');
+function prepareInputs() {
+  var inputType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'City';
+
+  switch (inputType) {
+    case 'City':
+      input1.setAttribute('placeholder', 'Poznań');
+      input2.classList.add('hidden');
+      break;
+
+    case 'ZipCode':
+      input1.setAttribute('placeholder', '61-875');
+      input2.classList.add('hidden');
+      break;
+
+    case 'Geo':
+      input1.setAttribute('placeholder', 'Longitude:');
+      input2.setAttribute('placeholder', 'Latitude:');
+      input2.classList.remove('hidden');
+      break;
+
+    default:
+      console.log("Something's wrong with search option input");
+  }
 }
 
 ;
+prepareInputs(optSelect.value);
 optSelect.addEventListener('change', function (e) {
-  return toggleHidden(input2);
+  return prepareInputs(optSelect.value);
 });
 /* harmony default export */ __webpack_exports__["default"] = (countriesCodes);
 

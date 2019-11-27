@@ -249,6 +249,7 @@ const countries = {
   };
 
 const countryCodesList = Object.keys(countries);
+const input1 = document.getElementById('js_textInput');
 const input2 = document.getElementById('js_textInput2');
 const optSelect = document.getElementById('js_optSelect');
 
@@ -261,13 +262,28 @@ const countriesCodes = function() {
     }
 };
 
-function toggleHidden(el) {
-    optSelect.value === 'Geo coordinates' ?
-        el.classList.remove('hidden') :
-        el.classList.add('hidden');
+function prepareInputs(inputType = 'City') {
+    switch(inputType) {
+        case 'City':
+            input1.setAttribute('placeholder', 'Poznań')
+            input2.classList.add('hidden');
+            break;
+        case 'ZipCode':
+            input1.setAttribute('placeholder', '61-875')
+            input2.classList.add('hidden');
+            break;
+        case 'Geo':
+            input1.setAttribute('placeholder', 'Longitude:')
+            input2.setAttribute('placeholder', 'Latitude:')
+            input2.classList.remove('hidden');
+            break;
+        default:
+            console.log("Something's wrong with search option input")
+    }
 };
 
-optSelect.addEventListener('change', e => toggleHidden(input2));
+prepareInputs(optSelect.value)
+optSelect.addEventListener('change', e => prepareInputs(optSelect.value));
 
 export default countriesCodes;
 
