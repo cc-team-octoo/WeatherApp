@@ -15,19 +15,19 @@
         <h1>The most awesome Weather App ever created</h1>
         <section class="section inputBox">
             <form class="inputs">
-                <select class="input" id="js_countryCode"></select>
                 <select class="input shortInput" id="js_optSelect">
-                    <option selected  value="City">City name</option>
-                    <option value="Geo">Geo coordinates</option>
-                    <option value="ZipCode">ZIP Code</option>
+                    <option value="City">by city name</option>
+                    <option value="ZipCode">by ZIP Code</option>
+                    <option selected value="Geo">by geo coordinates</option>
                 </select>
                 <div class="textInput"> 
                     <div class="textInput1">            
-                        <input type="text" class="input" id="js_textInput" placeholder="Jakiś placeholder" maxlength="15">
+                        <input type="text" class="input" id="js_textInput" maxlength="15">
                         <img src="./images/location.svg" class="locationIcon" alt="location icon">
                     </div>
-                    <input type="text" class="input hidden" id="js_textInput2" placeholder="Jakiś placeholder" maxlength="15">
+                    <input type="text" class="input hidden" id="js_textInput2" maxlength="15">
                 </div>
+                <select class="input" id="js_countryCode"></select>
             </form>
             <button type="button" class="button" id="js_searchBtn">Search</butoon>
         </section>
