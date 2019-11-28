@@ -1,3 +1,5 @@
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: './src/js/app.js',
     output: {
@@ -33,10 +35,16 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'imgs',
+                        outputPath: 'imgs/',
+                        publicPath: 'imgs/',
                     }
                 }
-            },
+            }
         ]
-    }
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ]
 }
