@@ -57,6 +57,85 @@ p {
     margin: 1rem 0;
 }
 
+.hidden {
+    display: none;
+}
+
+/* input area */
+.inputBox {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    padding: 10px 20px;
+}
+
+.inputs {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .inputBox {
+        flex-flow: row nowrap;
+        align-items: flex-end;
+    }
+}
+
+.input {
+    font-size: 1rem;
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    margin-right: 1rem;
+}
+
+#js_countryCode {
+    max-width: 70px;
+}
+
+#js_textInput{
+    margin-right: 0;
+}
+
+.shortInput {
+    max-width: 180px;
+}
+
+.dataInput {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.inputContainer {
+    position: relative;
+    padding-right: 1rem;
+}
+
+.locationIcon {
+    position: absolute;
+    height: 1.2rem;
+    right: 1.2rem;
+    top: .8rem;
+    cursor: pointer;
+}
+
+.button {
+    margin: 5px 0;
+    padding: .5rem 1.2rem;
+    color: #fafafa;
+    font-size: 1.2rem;
+    background-color: var(--btncolor);
+    border: none;
+    border-radius: 5px;
+    height: fit-content;
+    cursor: pointer;
+}
+
+/* waether cards */
 .card {
     background-color: #fafafa;
     color: var(--bgcolor);

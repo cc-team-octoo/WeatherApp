@@ -1,5 +1,8 @@
+import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
+
+countriesCodes()
 
 
 

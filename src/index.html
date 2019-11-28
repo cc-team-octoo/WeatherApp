@@ -8,15 +8,31 @@
     <link rel="stylesheet" href="resetCSS.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="../docs/js/bundle.js" async></script>
 </head>
 <body>
     <main>
         <h1>The most awesome Weather App ever created</h1>
         <section class="section inputBox">
-            <!-- input section -->
+            <form class="inputs">
+                <select class="input shortInput" id="js_optSelect">
+                    <option value="City">by city name</option>
+                    <option value="ZipCode">by ZIP Code</option>
+                    <option selected value="Geo">by geo coordinates</option>
+                </select>
+                <div class="dataInput"> 
+                    <div class="inputContainer">            
+                        <input type="text" class="input" id="js_textInput" maxlength="15">
+                        <img src="./images/location.svg" class="locationIcon" alt="location icon">
+                    </div>
+                    <input type="text" class="input hidden" id="js_textInput2" maxlength="15">
+                    <select class="input" id="js_countryCode"></select>
+                </div>
+            </form>
+            <button type="button" class="button" id="js_searchBtn">Search</butoon>
         </section>
         <section class="section outputBox">
-            <h2 id="js_cityName">City name</h2>
+            <h2 id="js_currentCity">City name</h2>
             <div class="card bigCard">
                 <div class="bigCard__top">
                     <p>
