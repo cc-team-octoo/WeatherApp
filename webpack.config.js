@@ -37,6 +37,7 @@ module.exports = {
                         name: '[name].[ext]',
                         outputPath: 'imgs/',
                         publicPath: 'imgs/',
+                        esModule: false,
                     }
                 }
             }
