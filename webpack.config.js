@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/js/app.js',
     output: {
-        path: `${__dirname}/docs/js`,
+        path: `${__dirname}/docs`,
         filename: 'bundle.js'
     },
     watch: false,
@@ -27,7 +27,12 @@ module.exports = {
             },
             {
                 test:/\.html$/,
-                use:['html-loader']
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: ['img:src', 'link:href']
+                    }
+                }
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
