@@ -24,7 +24,7 @@ const currentHumidity = document.getElementById("js_humidity");
 
 const weatherUpdate = obj => {
     currentCity.innerText = obj.name;
-    currentTemperature.innerText = obj.main.temp - 273.15.toFixed(1);
+    currentTemperature.innerText = obj.main.temp.toFixed(1);
     weatherDesc.innerText = obj.weather[0].description;
     todayMinTemperature.innerText = obj.main.temp_min.toFixed(1);
     todayMaxTemperature.innerText = obj.main.temp_max.toFixed(1);
