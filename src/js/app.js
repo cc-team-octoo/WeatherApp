@@ -24,10 +24,10 @@ const currentHumidity = document.getElementById("js_humidity");
 
 const weatherUpdate = obj => {
     currentCity.innerText = obj.name;
-    currentTemperature.innerText = (Math.round((obj.main.temp - 273.15) * 10) / 10).toFixed(1);
+    currentTemperature.innerText = obj.main.temp - 273.15.toFixed(1);
     weatherDesc.innerText = obj.weather[0].description;
-    todayMinTemperature.innerText = (Math.round((obj.main.temp_min - 273.15) * 10) / 10).toFixed(1);
-    todayMaxTemperature.innerText = (Math.round((obj.main.temp_max - 273.15) * 10) / 10).toFixed(1);
+    todayMinTemperature.innerText = obj.main.temp_min.toFixed(1);
+    todayMaxTemperature.innerText = obj.main.temp_max.toFixed(1);
     currentPressure.innerText = obj.main.pressure;
     currentHumidity.innerText = obj.main.humidity;
 }
