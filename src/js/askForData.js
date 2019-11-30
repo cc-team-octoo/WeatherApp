@@ -9,21 +9,21 @@ const askForData = (inputType="Circle",inputValue="") => {
     switch (inputType) {
         case 'City':
             //pobiera pod względem miasta
-                getData(`http://api.openweathermap.org/data/2.5/forecast?q=London&appid=${apiKey}`,showWeather)
-                getData(`http:/api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}`,showCurrentWeather);
+                getData(`http://api.openweathermap.org/data/2.5/forecast?q=${inputValue}&appid=${apiKey}`,showWeather)
+                getData(`http:/api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`,showCurrentWeather);
 
           break;
         case 'ZipCode':
             //pobiera po kodzie
-               getData(`http://api.openweathermap.org/data/2.5/forecast?zip=61-222,pl&appid=${apiKey}`,showWeather)
-                getData(`http://api.openweathermap.org/data/2.5/weather?zip=61-222,pl&appid=${apiKey}`,showCurrentWeather)
+               getData(`http://api.openweathermap.org/data/2.5/forecast?zip=${inputValue},pl&appid=${apiKey}`,showWeather)
+                getData(`http://api.openweathermap.org/data/2.5/weather?zip=${inputValue},pl&appid=${apiKey}`,showCurrentWeather)
               
 
                 break;
           case 'Geo':
               //pobiera po współrzędnych
-                getData(`http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${apiKey}`,showWeather)
-                getData(`http:api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${apiKey}`,showCurrentWeather)
+                getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${inputValue}&lon=${inputValue}&appid=${apiKey}`,showWeather)
+                getData(`http:api.openweathermap.org/data/2.5/weather?lat=${inputValue}&lon=${inputValue}&appid=${apiKey}`,showCurrentWeather)
           break;
             case 'Rectangle':
               //pobiera po obszarze miast (kwadrat koordynaty geograficzne)

@@ -8,9 +8,11 @@ countriesCodes();
 const searchBtn = document.getElementById("js_searchBtn");
 const form = document.querySelector(".inputs");
 
-searchBtn.addEventListener('click', askForData(form.elements.namedItem("js_inputType").value,
-                                               form.elements.namedItem("js_textInputType").value,
-                                               form.elements.namedItem("js_textInputType2").value))
+searchBtn.addEventListener('click', () => {
+    askForData(form.elements.namedItem("js_inputType").value,
+               form.elements.namedItem("js_textInputType").value,
+               form.elements.namedItem("js_textInputType2").value);
+})    
 
 const currentCity = document.getElementById("js_currentCity");
 const currentTemperature = document.getElementById("js_midTemp");
