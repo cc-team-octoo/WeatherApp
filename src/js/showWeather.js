@@ -5,6 +5,6 @@ function showWeather(arg){
     console.log(arg.city) // miasto jakie wyszukało
     console.log(arg.list) // lista "pogód" na najbliższy czas
     console.log("-----------") 
-    }
+}
 
 export default showWeather
