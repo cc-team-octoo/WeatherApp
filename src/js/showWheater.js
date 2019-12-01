@@ -1,12 +1,11 @@
-const icons = document.querySelectorAll('.smallCard__icon')
+const icons = document.querySelectorAll('.js_smallCard__icon');
+const maxTemps = document.querySelectorAll('.js_smallMaxTemp')
 
 function getToday() {
     const now = new Date();
     const today = now.toISOString().slice(0, 10);
-    console.log(today)
     return today;
 }
-
 
 //store needed data in one object
 function getAllDaysData(arg) {
@@ -23,30 +22,24 @@ function getAllDaysData(arg) {
 }
 
 //get data for 4 next days at noon
-function get4DaysData(arg) {
+function getNextDaysData(arg) {
     const today = getToday();
     const allDaysData = getAllDaysData(arg);
     console.log(today)
     console.log(allDaysData)
-    const fourDaysData = allDaysData.filter((n) => {
+    const nextDaysData = allDaysData.filter((n) => {
         return (n.date > today && n.time === "12:00:00")
     })
-    console.log(fourDaysData)
+    return nextDaysData;
 }
 
+//display weather data in small cards
 function showWeather(arg){
-    console.log("-----Pogoda na najbliższe dni------") 
-    console.log(arg) //całe dane już przerobione z json
-    console.log(arg.city) // miasto jakie wyszukało
-    console.log(arg.list) // lista "pogód" na najbliższy czas
-    console.log("-----------") 
-    get4DaysData(arg)
-
-
-    
-    //wyciągnij weather[0].icon i zrób url
-    icons[0].innerHTML = '<img src="imgs/location.svg">'
-    console.log('Icons:', icons)
+    const nextDaysData = getNextDaysData(arg);
+    for(let i = 0; i <= 3; i++) {
+        maxTemps[i].textContent = nextDaysData[i].tempMax.toFixed(1)
+        icons[i].src = `http://openweathermap.org/img/wn/${nextDaysData[i].icon}@2x.png`
+    }
 }
 
 export default showWeather
