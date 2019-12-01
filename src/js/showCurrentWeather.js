@@ -14,16 +14,16 @@ const currentHumidity = document.getElementById("js_humidity");
 // }
 
 //function to update current weather card
-const showCurrentWeather = obj => {
-    currentCity.innerText = obj.name;
-    currentTemperature.innerText = obj.main.temp.toFixed(1);
-    weatherDesc.innerText = obj.weather[0].description;
-    todayMinTemperature.innerText = obj.main.temp_min.toFixed(1);
-    todayMaxTemperature.innerText = obj.main.temp_max.toFixed(1);
-    currentPressure.innerText = obj.main.pressure;
-    currentHumidity.innerText = obj.main.humidity;
+const showCurrentWeather = arg => {
+    currentCity.innerText = arg.name;
+    currentTemperature.innerText = arg.main.temp.toFixed(1);
+    weatherDesc.innerText = arg.weather[0].description;
+    todayMinTemperature.innerText = arg.main.temp_min.toFixed(1);
+    todayMaxTemperature.innerText = arg.main.temp_max.toFixed(1);
+    currentPressure.innerText = arg.main.pressure;
+    currentHumidity.innerText = arg.main.humidity;
     console.log("-----Aktualna Pogoda------");
-    console.log(obj); //całe dane już przerobione z json 
+    console.log(arg); //całe dane już przerobione z json 
     console.log("-----------");
 }
 
