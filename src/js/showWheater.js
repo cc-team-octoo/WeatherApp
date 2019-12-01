@@ -25,8 +25,6 @@ function getAllDaysData(arg) {
 function getNextDaysData(arg) {
     const today = getToday();
     const allDaysData = getAllDaysData(arg);
-    console.log(today)
-    console.log(allDaysData)
     const nextDaysData = allDaysData.filter((n) => {
         return (n.date > today && n.time === "12:00:00")
     })
@@ -35,6 +33,7 @@ function getNextDaysData(arg) {
 
 //display weather data in small cards
 function showWeather(arg){
+    console.log('----------Prognoza na kolejne dni------------', arg)
     const nextDaysData = getNextDaysData(arg);
     for(let i = 0; i <= 3; i++) {
         maxTemps[i].textContent = nextDaysData[i].tempMax.toFixed(1)
