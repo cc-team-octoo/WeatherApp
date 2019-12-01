@@ -11,7 +11,9 @@ function getDate() {
     const todayNameAndFourNextDay = [];
     let todays = weekDay;
     const dateDescription = `Today is ${dayName[weekDay]}, ${day} ${monthName[month]} ${year}`;
+    const dateToday = `Today is ${day}.${month + 1}`;
 
+    console.log(dateToday);
     for (let i = 0; i < 5; i++) {
         if (todays > 6) {
             todays = 0
@@ -22,6 +24,7 @@ function getDate() {
     }
     return {
         todayNameAndFourNextDay,
-        dateDescription
+        dateDescription,
+        dateToday
     }
 }
