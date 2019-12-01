@@ -15,7 +15,8 @@ function getAllDaysData(arg) {
             date: i.dt_txt.split(' ')[0],
             time: i.dt_txt.split(' ')[1],
             tempMax: i.main.temp_max,
-            icon: i.weather[0].icon
+            icon: i.weather[0].icon,
+            desc: i.weather[0].description
         })
     });
     return allDaysData;
@@ -37,7 +38,9 @@ function showWeather(arg){
     const nextDaysData = getNextDaysData(arg);
     for(let i = 0; i <= 3; i++) {
         maxTemps[i].textContent = nextDaysData[i].tempMax.toFixed(1)
-        icons[i].src = `http://openweathermap.org/img/wn/${nextDaysData[i].icon}@2x.png`
+        icons[i].src = `http://openweathermap.org/img/wn/${nextDaysData[i].icon}@2x.png`,
+        icons[i].alt = nextDaysData[i].desc
+        icons[i].title = nextDaysData[i].desc
     }
 }
 
