@@ -1,3 +1,5 @@
+import '../css/reset.css'
+import '../css/style.css'
 import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"

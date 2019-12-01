@@ -1,7 +1,9 @@
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: './src/js/app.js',
     output: {
-        path: `${__dirname}/docs/js`,
+        path: `${__dirname}/docs`,
         filename: 'bundle.js'
     },
     watch: false,
@@ -18,7 +20,32 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+            },
+            {
+                test:/\.html$/,
+                use: ['html-loader']
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'imgs/',
+                        publicPath: 'imgs/',
+                        esModule: false,
+                    }
+                }
             }
         ]
-    }
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ]
 }

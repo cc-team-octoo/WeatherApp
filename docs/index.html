@@ -12,17 +12,17 @@
         <h1>The most awesome Weather App ever created</h1>
         <section class="section inputBox">
             <form class="inputs">
-                <select name="js_inputType" class="input shortInput" id="js_optSelect">
+                <select class="input shortInput" id="js_optSelect">
                     <option value="City">by city name</option>
                     <option value="ZipCode">by ZIP Code</option>
                     <option selected value="Geo">by geo coordinates</option>
                 </select>
                 <div class="dataInput"> 
-                    <div class="inputContainer">  
+                    <div class="inputContainer">            
                         <input type="text" class="input" id="js_textInput" maxlength="15">
-                        <img src="./icons/location.svg" class="locationIcon" alt="location icon">
+                        <img src="imgs/location.svg" class="locationIcon" alt="location icon">
                     </div>
-                    <input name="js_textInputType2" type="text" class="input hidden" id="js_textInput2" maxlength="15">
+                    <input type="text" class="input hidden" id="js_textInput2" maxlength="15">
                     <select class="input" id="js_countryCode"></select>
                 </div>
             </form>
@@ -37,8 +37,8 @@
                         °C
                     </p>
                     <div class="bigCard__date">
-                        <p id="js_date" class="highlight js_date">04.12</p>
-                        <p id="js_day" class="js_day">Thursday</p>
+                        <p id="js_date" class="highlight">04.12</p>
+                        <p id="js_day">Thursday</p>
                     </div>
                 </div>
                 <p id="js_description">light intensity drizzle</p>
@@ -56,40 +56,40 @@
             <div class="smallCards">
                 <div class="card smallCard">
                     <div class="smallCard__top">
-                        <div id="js_smallIcon" class="smallCard__icon"><img src="./icons/partlysunny.png"></div>
+                        <div id="js_smallIcon" class="smallCard__icon"><img src="imgs/partlysunny.png"></div>
                         <div class="smallCard__date">
-                            <p id="js_smallDate" class="smallDate js_date">05.12</p>
-                            <p id="js_smallDay" class="js_day"> Friday</p>
+                            <p id="js_smallDate" class="smallDate">05.12</p>
+                            <p id="js_smallDay">Friday</p>
                         </div>
                     </div>
                     <p class="smallTemp">max. <span id="js_smallMaxTemp">25</span>°C</p>
                 </div>
                 <div class="card smallCard">
                     <div class="smallCard__top">
-                        <div id="js_smallIcon" class="smallCard__icon"><img src="./icons/partlysunny.png"></div>
+                        <div id="js_smallIcon" class="smallCard__icon"><img src="imgs/partlysunny.png"></div>
                         <div class="smallCard__date">
-                            <p id="js_smallDate" class="smallDate js_date">06.12</p>
-                            <p id="js_smallDay" class="js_day">Saturday</p>
+                            <p id="js_smallDate" class="smallDate">06.12</p>
+                            <p id="js_smallDay">Saturday</p>
                         </div>
                     </div>
                     <p class="smallTemp">max. <span id="js_smallMaxTemp">25</span>°C</p>
                 </div>
                 <div class="card smallCard">
                     <div class="smallCard__top">
-                        <div id="js_smallIcon" class="smallCard__icon"><img src="./icons/partlysunny.png"></div>
+                        <div id="js_smallIcon" class="smallCard__icon"><img src="imgs/partlysunny.png"></div>
                         <div class="smallCard__date">
-                            <p id="js_smallDate" class="smallDate js_date">07.12</p>
-                            <p id="js_smallDay" class="js_day">Sunday</p>
+                            <p id="js_smallDate" class="smallDate">07.12</p>
+                            <p id="js_smallDay">Sunday</p>
                         </div>
                     </div>
                     <p class="smallTemp">max. <span id="js_smallMaxTemp">25</span>°C</p>
                 </div>
                 <div class="card smallCard">
                     <div class="smallCard__top">
-                        <div id="js_smallIcon" class="smallCard__icon"><img src="./icons/partlysunny.png"></div>
+                        <div id="js_smallIcon" class="smallCard__icon"><img src="imgs/partlysunny.png"></div>
                         <div class="smallCard__date">
-                            <p id="js_smallDate" class="smallDate js_date">08.12</p>
-                            <p id="js_smallDay" class="js_day">Monday</p>
+                            <p id="js_smallDate" class="smallDate">08.12</p>
+                            <p id="js_smallDay">Monday</p>
                         </div>
                     </div>
                     <p class="smallTemp">max. <span id="js_smallMaxTemp">25</span>°C</p>
@@ -97,5 +97,5 @@
             </div>
         </section>
     </main>
-</body>
+<script type="text/javascript" src="bundle.js"></script></body>
 </html>
