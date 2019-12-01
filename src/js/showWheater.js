@@ -22,6 +22,18 @@ function getAllDaysData(arg) {
     return allDaysData;
 }
 
+//get data for 4 next days at noon
+function get4DaysData(arg) {
+    const today = getToday();
+    const allDaysData = getAllDaysData(arg);
+    console.log(today)
+    console.log(allDaysData)
+    const fourDaysData = allDaysData.filter((n) => {
+        return (n.date > today && n.time === "12:00:00")
+    })
+    console.log(fourDaysData)
+}
+
 function showWeather(arg){
     console.log("-----Pogoda na najbliższe dni------") 
     console.log(arg) //całe dane już przerobione z json
