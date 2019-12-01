@@ -1,53 +1,22 @@
 import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
-import showCurrentWeather from "./showCurrentWeather"
-
-countriesCodes();
+// import showCurrentWeather from "./showCurrentWeather"
 
 const searchBtn = document.getElementById("js_searchBtn");
 const form = document.querySelector(".inputs");
 
+//get data from inputs on search click
 searchBtn.addEventListener('click', () => {
     askForData(form.elements.namedItem("js_inputType").value,
                form.elements.namedItem("js_textInputType").value,
                form.elements.namedItem("js_textInputType2").value);
-})    
+})  
 
-const currentCity = document.getElementById("js_currentCity");
-const currentTemperature = document.getElementById("js_midTemp");
-const weatherDesc = document.getElementById("js_description");
-const todayMinTemperature = document.getElementById("js_minTemp");
-const todayMaxTemperature = document.getElementById("js_maxTemp");
-const currentPressure = document.getElementById("js_pressure");
-const currentHumidity = document.getElementById("js_humidity");
-
-const weatherUpdate = obj => {
-    currentCity.innerText = obj.name;
-    currentTemperature.innerText = obj.main.temp.toFixed(1);
-    weatherDesc.innerText = obj.weather[0].description;
-    todayMinTemperature.innerText = obj.main.temp_min.toFixed(1);
-    todayMaxTemperature.innerText = obj.main.temp_max.toFixed(1);
-    currentPressure.innerText = obj.main.pressure;
-    currentHumidity.innerText = obj.main.humidity;
-}
-
-const dates = document.querySelectorAll(".date");
-const dayNames = document.querySelectorAll(".js_date");
-
-const dateUpdate = () => {
-    const today = new Date()
-    const month = today.getMonth() + 1;
-    const day = today.getDate();
-    const dayName = today.getDay();
-
-    // trzeba by było przeiterować się po zmiennych dates i dayNames, np. forEach(el, i) i podorabiać dynamicznie daty
-
-}
-
-dateUpdate();
-
-geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu po załadowaniu domu uruchamiała się i wskakiwały ako pierwsze - użytkwonik ma domyślnie pogode dla swoej lokalizacji
+//window onload functions
+countriesCodes(); //generate codes for country input
+// dateUpdate(); //get actual date - Mirek robi funkcję
+geolocation() //get weather data based on current geolocation
 
 
 
@@ -55,5 +24,5 @@ geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu
 
 askForData() //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
 
-// export {currentCity, currentTemperature, weatherDesc, todayMinTemperature, todayMaxTemperature, currentPressure, currentHumidity}
-export default weatherUpdate;
+// // export {currentCity, currentTemperature, weatherDesc, todayMinTemperature, todayMaxTemperature, currentPressure, currentHumidity}
+// export default weatherUpdate;
