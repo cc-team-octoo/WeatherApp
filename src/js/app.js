@@ -3,7 +3,9 @@ import '../css/style.css'
 import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
+import displayDates from "./getDate"
 import graphInChart from "./graphInChart"
+
 
 const searchBtn = document.getElementById("js_searchBtn");
 const form = document.querySelector(".inputs");
@@ -17,9 +19,7 @@ searchBtn.addEventListener('click', () => {
 
 //window onload functions
 countriesCodes(); //generate codes for country input
-// dateUpdate(); //get actual date - Mirek robi funkcję
-askForData(); //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
-
+displayDates();
+askForData(); //default query for Poznań
 graphInChart("Poznań");
-
-geolocation(); //get weather data based on current geolocation
+geolocation(); //get weather data based on current geolocation after giving permission
