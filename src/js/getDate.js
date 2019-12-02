@@ -18,7 +18,7 @@ function getDaysNames() {
 function getDates() {
     const today = new Date();
     const tomorrow = new Date(today)
-    const dates = []
+    const dates = [`${today.getDate()}.${today.getMonth()+1}`]
 
     for(let i=0; i<=4; i++) {
         tomorrow.setDate(tomorrow.getDate() + 1)
