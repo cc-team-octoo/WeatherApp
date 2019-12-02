@@ -1,30 +1,28 @@
-function getDate() {
-    const dayName = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-    const monthName = ["January ", "February", "March", "April", "May", "June", "July", "August",
-        "September", "October", "November", "December"
-    ];
+function getDaysNames() {
     const today = new Date();
     const weekDay = today.getDay();
-    const month = today.getMonth();
-    const day = today.getDate();
-    const year = today.getFullYear();
-    const todayNameAndFourNextDay = [];
     let todays = weekDay;
-    const dateDescription = `Today is ${dayName[weekDay]}, ${day} ${monthName[month]} ${year}`;
-    const dateToday = `Today is ${day}.${month + 1}`;
+    const dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const daysNames = [];
 
-    console.log(dateToday);
     for (let i = 0; i < 5; i++) {
         if (todays > 6) {
             todays = 0
         }
-
-        todayNameAndFourNextDay.push(dayName[todays])
+        daysNames.push(dayName[todays])
         todays++;
     }
-    return {
-        todayNameAndFourNextDay,
-        dateDescription,
-        dateToday
+    return daysNames
+}
+
+function getDates() {
+    const today = new Date();
+    const tomorrow = new Date(today)
+    const dates = []
+
+    for(let i=0; i<=4; i++) {
+        tomorrow.setDate(tomorrow.getDate() + 1)
+        dates.push(`${tomorrow.getDate()}.${tomorrow.getMonth()+1}`)
     }
+    return dates
 }
