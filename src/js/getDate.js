@@ -26,3 +26,16 @@ function getDates() {
     }
     return dates
 }
+
+function displayDates() {
+    const daysNames = getDaysNames();
+    const dates = getDates();
+    const daysNamesDisplay = document.querySelectorAll('.js_day');
+    const datesDisplay = document.querySelectorAll('.js_date');
+    for(let i=0; i<=4; i++){
+        daysNamesDisplay[i].textContent = daysNames[i];
+        datesDisplay[i].textContent = dates[i];
+    }
+}
+
+export default displayDates;
