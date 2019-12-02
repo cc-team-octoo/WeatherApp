@@ -1,3 +1,4 @@
+
 const icons = document.querySelectorAll('.js_smallCard__icon');
 const maxTemps = document.querySelectorAll('.js_smallMaxTemp')
 

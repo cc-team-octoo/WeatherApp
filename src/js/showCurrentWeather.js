@@ -1,3 +1,5 @@
+import graphInChart from "./graphInChart";
+
 const currentCity = document.getElementById("js_currentCity");
 const currentTemperature = document.getElementById("js_midTemp");
 const weatherDesc = document.getElementById("js_description");
@@ -22,6 +24,8 @@ const showCurrentWeather = arg => {
     todayMaxTemperature.innerText = arg.main.temp_max.toFixed(1);
     currentPressure.innerText = arg.main.pressure;
     currentHumidity.innerText = arg.main.humidity;
+    console.log(arg.name);
+    graphInChart(arg.name);
     console.log("-----Aktualna Pogoda------");
     console.log(arg); //całe dane już przerobione z json 
     console.log("-----------");

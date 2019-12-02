@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WeatherApp</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 <body>
     <main>
@@ -30,6 +31,7 @@
         </section>
         <section class="section outputBox">
             <h2 id="js_currentCity">City name</h2>
+            <div class=currentWeatherBox>
             <div class="card bigCard">
                 <div class="bigCard__top">
                     <p>
@@ -51,7 +53,8 @@
                 <p>humidity <span id="js_humidity" class="highlight">70</span>%</p>
             </div>
             <div class="chart">
-                <!-- chart's place -->
+                <canvas id="line-chart" width="800" height="450"></canvas>
+            </div>
             </div>
             <div class="smallCards">
                 <div class="card smallCard">

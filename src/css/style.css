@@ -136,6 +136,14 @@ p {
 }
 
 /* waether cards */
+
+.currentWeatherBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .card {
     background-color: #fafafa;
     color: var(--bgcolor);
@@ -165,6 +173,10 @@ p {
 
 #js_description {
     font-size: 1.5rem;
+}
+
+#line-chart {
+    width: 100%;
 }
 
 /* Small Cards*/
