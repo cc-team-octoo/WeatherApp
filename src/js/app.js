@@ -1,17 +1,30 @@
+import '../css/reset.css'
+import '../css/style.css'
 import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
 import displayDates from "./getDate"
 
-countriesCodes()
+const searchBtn = document.getElementById("js_searchBtn");
+const form = document.querySelector(".inputs");
 
+//get data from inputs on search click
+searchBtn.addEventListener('click', () => {
+    askForData(form.elements.namedItem("js_inputType").value,
+               form.elements.namedItem("js_textInputType").value,
+               form.elements.namedItem("js_textInputType2").value);
+})  
 
-
-geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu po załadowaniu domu uruchamiała się i wskakiwały ako pierwsze - użytkwonik ma domyślnie pogode dla swoej lokalizacji
+//window onload functions
+countriesCodes(); //generate codes for country input
+displayDates()
+geolocation() //get weather data based on current geolocation
 
 
 
 //document.querySelector("jakiś super formularz").addEventListener("click",askForData())
 
 askForData() //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
-displayDates()
+// // export {currentCity, currentTemperature, weatherDesc, todayMinTemperature, todayMaxTemperature, currentPressure, currentHumidity}
+// export default weatherUpdate;
+
