@@ -1,6 +1,7 @@
 import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
+import displayDates from "./getDate"
 
 countriesCodes()
 
@@ -13,3 +14,4 @@ geolocation() //pobiera dane z lokalizaci użytkownika - proponuje żeby od razu
 //document.querySelector("jakiś super formularz").addEventListener("click",askForData())
 
 askForData() //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
+displayDates()
