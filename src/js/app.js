@@ -17,14 +17,10 @@ searchBtn.addEventListener('click', () => {
 
 //window onload functions
 countriesCodes(); //generate codes for country input
-displayDates()
-geolocation() //get weather data based on current geolocation
+displayDates();
+askForData("City", "Poznań"); //default query for Poznań
+geolocation(); //get weather data based on current geolocation after giving permission
 
 
 
-//document.querySelector("jakiś super formularz").addEventListener("click",askForData())
-
-askForData() //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
-// // export {currentCity, currentTemperature, weatherDesc, todayMinTemperature, todayMaxTemperature, currentPressure, currentHumidity}
-// export default weatherUpdate;
 
