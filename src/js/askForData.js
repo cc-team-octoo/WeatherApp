@@ -3,7 +3,7 @@ import showWeather from "./showWeather"
 import showCurrentWeather from "./showCurrentWeather"
 
 const apiKey=`4e687fa0129ef13f04e5dac8867f62ca`
-const askForData = (inputType, inputValue) => {
+const askForData = (inputType="City", inputValue="Poznań") => {
     //za input Type wstawiamy z czego pobieramy input Value to value inputa
     switch (inputType) {
       case 'City':

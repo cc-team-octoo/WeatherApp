@@ -4,6 +4,8 @@ import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
 import displayDates from "./getDate"
+import graphInChart from "./graphInChart"
+
 
 const searchBtn = document.getElementById("js_searchBtn");
 const form = document.querySelector(".inputs");
@@ -18,9 +20,6 @@ searchBtn.addEventListener('click', () => {
 //window onload functions
 countriesCodes(); //generate codes for country input
 displayDates();
-askForData("City", "Poznań"); //default query for Poznań
+askForData(); //default query for Poznań
+graphInChart("Poznań");
 geolocation(); //get weather data based on current geolocation after giving permission
-
-
-
-
