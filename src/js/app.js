@@ -3,7 +3,7 @@ import '../css/style.css'
 import countriesCodes from "./countriesCodes.js"
 import geolocation from "./geolocation.js"
 import askForData from "./askForData"
-// import showCurrentWeather from "./showCurrentWeather"
+import displayDates from "./getDate"
 
 const searchBtn = document.getElementById("js_searchBtn");
 const form = document.querySelector(".inputs");
@@ -17,7 +17,7 @@ searchBtn.addEventListener('click', () => {
 
 //window onload functions
 countriesCodes(); //generate codes for country input
-// dateUpdate(); //get actual date - Mirek robi funkcję
+displayDates()
 geolocation() //get weather data based on current geolocation
 
 
@@ -25,6 +25,6 @@ geolocation() //get weather data based on current geolocation
 //document.querySelector("jakiś super formularz").addEventListener("click",askForData())
 
 askForData() //- funkcja działa docelowo można sobie sprawdzić ZipCode City i GeoLocation
-
 // // export {currentCity, currentTemperature, weatherDesc, todayMinTemperature, todayMaxTemperature, currentPressure, currentHumidity}
 // export default weatherUpdate;
+
