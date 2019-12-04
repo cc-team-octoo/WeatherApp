@@ -3,8 +3,11 @@ import showWeather from "./showWeather"
 import showCurrentWeather from "./showCurrentWeather"
 
 const apiKey = `4e687fa0129ef13f04e5dac8867f62ca`
-const askForData = (inputType = "City", inputValue = "Poznan", secondInputValue = "") => {
-  //za input Type wstawiamy z czego pobieramy input Value to value inputa
+const askForData = (inputType = "City", inputValue = "", secondInputValue = "") => {
+  if (!inputValue) {
+    alert("Input cannot be empty")
+    return
+  }
   switch (inputType) {
     case 'City':
       getData(`http://api.openweathermap.org/data/2.5/forecast?q=${inputValue}&appid=${apiKey}&units=metric`, showWeather)
@@ -15,6 +18,10 @@ const askForData = (inputType = "City", inputValue = "Poznan", secondInputValue 
       getData(`http://api.openweathermap.org/data/2.5/weather?zip=${inputValue},pl&appid=${apiKey}&units=metric`, showCurrentWeather)
       break;
     case 'Geo':
+      if (!secondInputValue) {
+        alert("Inputs cannot be empty")
+        return
+      }
       getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${inputValue}&lon=${secondInputValue}&appid=${apiKey}&units=metric`, showWeather)
       getData(`http:api.openweathermap.org/data/2.5/weather?lat=${inputValue}&lon=${secondInputValue}&appid=${apiKey}&units=metric`, showCurrentWeather)
       break;

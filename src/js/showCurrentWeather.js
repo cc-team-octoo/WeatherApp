@@ -8,12 +8,6 @@ const todayMaxTemperature = document.getElementById("js_maxTemp");
 const currentPressure = document.getElementById("js_pressure");
 const currentHumidity = document.getElementById("js_humidity");
 
-// function logCurrentWeather(arg) {
-//     console.log("-----Aktualna Pogoda------")
-//     console.log(arg) //całe dane już przerobione z json 
-//     console.log("-----------")
-//     weatherUpdate(arg);
-// }
 
 //function to update current weather card
 const showCurrentWeather = arg => {
@@ -24,11 +18,7 @@ const showCurrentWeather = arg => {
     todayMaxTemperature.innerText = arg.main.temp_max.toFixed(1);
     currentPressure.innerText = arg.main.pressure;
     currentHumidity.innerText = arg.main.humidity;
-    console.log(arg.name);
     graphInChart(arg.name);
-    console.log("-----Aktualna Pogoda------");
-    console.log(arg); //całe dane już przerobione z json 
-    console.log("-----------");
 }
 
 export default showCurrentWeather;

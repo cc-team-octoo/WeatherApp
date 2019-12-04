@@ -12,6 +12,7 @@ function getToday() {
     return today;
 }
 
+
 //store needed data in one object
 function getAllDaysData(arg) {
     const allDaysData = [];
@@ -28,16 +29,33 @@ function getAllDaysData(arg) {
             humidity: i.main.humidity,
         })
     });
+    console.log(allDaysData)
     return allDaysData;
 }
 
 //get data for 4 next days at noon
 function getNextDaysData(arg) {
+    const helperArray = []
     const today = getToday();
     const allDaysData = getAllDaysData(arg);
+    allDaysData.reduce((prevday, nextDay) => {
+        console.log(helperArray.length, prevday, nextDay)
+        if (prevday.date !== nextDay.date || helperArray.length <= 0) {
+            const newArray = []
+            newArray.push(nextDay)
+            helperArray.push(newArray)
+        } else if (helperArray.length >= 0) {
+            const lastArray = helperArray[helperArray.length - 1]
+            lastArray[lastArray.length] = nextDay
+        }
+        return nextDay
+
+    })
+    console.log(helperArray)
     const nextDaysData = allDaysData.filter((n) => {
         return (n.date > today && n.time === "12:00:00")
     })
+
     return nextDaysData;
 }
 
