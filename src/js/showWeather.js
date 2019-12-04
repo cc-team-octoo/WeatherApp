@@ -1,6 +1,10 @@
-
+import showMoreInfo from "./showMoreInfo"
+const smallCard = document.querySelectorAll('.smallCard')
 const icons = document.querySelectorAll('.js_smallCard__icon');
 const maxTemps = document.querySelectorAll('.js_smallMaxTemp')
+
+
+
 
 function getToday() {
     const now = new Date();
@@ -15,9 +19,13 @@ function getAllDaysData(arg) {
         allDaysData.push({
             date: i.dt_txt.split(' ')[0],
             time: i.dt_txt.split(' ')[1],
+            tempAvg: i.main.temp,
             tempMax: i.main.temp_max,
+            tempMin: i.main.temp_min,
             icon: i.weather[0].icon,
-            desc: i.weather[0].description
+            desc: i.weather[0].description,
+            preasure: i.main.pressure,
+            humidity: i.main.humidity,
         })
     });
     return allDaysData;
@@ -33,14 +41,17 @@ function getNextDaysData(arg) {
     return nextDaysData;
 }
 
+
 //display weather data in small cards
-function showWeather(arg){
-    console.log('----------Prognoza na kolejne dni------------', arg)
+function showWeather(arg) {
     const nextDaysData = getNextDaysData(arg);
-    for(let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= 3; i++) {
+        smallCard[i].addEventListener("click", () => {
+            showMoreInfo(arg, nextDaysData, i)
+        })
         maxTemps[i].textContent = nextDaysData[i].tempMax.toFixed(1)
         icons[i].src = `http://openweathermap.org/img/wn/${nextDaysData[i].icon}@2x.png`,
-        icons[i].alt = nextDaysData[i].desc
+            icons[i].alt = nextDaysData[i].desc
         icons[i].title = nextDaysData[i].desc
     }
 }
