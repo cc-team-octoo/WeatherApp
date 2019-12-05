@@ -41,10 +41,10 @@ function showMoreInfo(arg, nextDaysData, i) {
     let minValue = Math.min.apply(null, compareFunctions.compareTemp(nextDaysData[i + 1], "min"))
     let day = nextDaysData[i + 1][0].date
     currentCity.innerHTML = arg.city.name
-    currentTemperature.innerHTML = nextDaysData[i + 1][0].tempAvg
+    currentTemperature.innerHTML = nextDaysData[i + 1][0].tempAvg.toFixed(1)
     weatherDesc.innerHTML = nextDaysData[i + 1][0].desc;
-    todayMinTemperature.innerHTML = minValue
-    todayMaxTemperature.innerHTML = maxValue
+    todayMinTemperature.innerHTML = minValue.toFixed(1)
+    todayMaxTemperature.innerHTML = maxValue.toFixed(1)
     currentPressure.innerHTML = nextDaysData[i + 1][0].preasure;
     currentHumidity.innerHTML = nextDaysData[i + 1][0].humidity;
     dateOfWeek.innerHTML = smallCard[i].querySelector("p.js_day").innerHTML;

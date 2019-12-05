@@ -61,7 +61,7 @@ function showWeather(arg) {
             showMoreInfo(arg, nextDaysData, i);
         })
         let maxValue = Math.max.apply(null, compareFunctions.compareTemp(nextDaysData[i + 1], "max"));
-        let mostDesc = compareFunctions.compareTemp(nextDaysData[i + 1], "desc");//+1 beacuse i will get data for today 
+        let mostDesc = compareFunctions.compareTemp(nextDaysData[i + 1], "desc"); //+1 beacuse i will get data for today 
         let mostIcon = compareFunctions.compareTemp(nextDaysData[i + 1], "logo");
         maxTemps[i].textContent = maxValue.toFixed(1)
         icons[i].src = `http://openweathermap.org/img/wn/${compareFunctions.mostCommon(mostIcon)}@2x.png`;
