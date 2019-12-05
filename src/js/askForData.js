@@ -25,7 +25,7 @@ const askForData = (inputType = "City", inputValue = "", secondInputValue = "", 
       getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${inputValue}&lon=${secondInputValue}&appid=${apiKey}&units=metric`, showWeather)
       getData(`http:api.openweathermap.org/data/2.5/weather?lat=${inputValue}&lon=${secondInputValue}&appid=${apiKey}&units=metric`, showCurrentWeather)
       break;
-    case '':
+    case 'Rectangle':
       //gets data by geo coordinates in rectangle
       getData(`http://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=${apiKey}&units=metric`, showCurrentWeather)
       break;

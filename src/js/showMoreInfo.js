@@ -1,4 +1,4 @@
-import * as compareFunctions from './compareData.js'
+import * as compareFunctions from './compareData.js';
 const currentCity = document.getElementById("js_currentCity");
 const currentTemperature = document.getElementById("js_midTemp");
 const weatherDesc = document.getElementById("js_description");
