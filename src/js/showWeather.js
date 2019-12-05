@@ -3,15 +3,11 @@ const smallCard = document.querySelectorAll('.smallCard')
 const icons = document.querySelectorAll('.js_smallCard__icon');
 const maxTemps = document.querySelectorAll('.js_smallMaxTemp')
 
-
-
-
 function getToday() {
     const now = new Date();
     const today = now.toISOString().slice(0, 10);
     return today;
 }
-
 
 //store needed data in one object
 function getAllDaysData(arg) {
@@ -29,17 +25,15 @@ function getAllDaysData(arg) {
             humidity: i.main.humidity,
         })
     });
-    console.log(allDaysData)
+
     return allDaysData;
 }
 
-//get data for 4 next days at noon
+//get data for 4 next days
 function getNextDaysData(arg) {
     const helperArray = []
-    const today = getToday();
     const allDaysData = getAllDaysData(arg);
     allDaysData.reduce((prevday, nextDay) => {
-        console.log(helperArray.length, prevday, nextDay)
         if (prevday.date !== nextDay.date || helperArray.length <= 0) {
             const newArray = []
             newArray.push(nextDay)
@@ -51,26 +45,68 @@ function getNextDaysData(arg) {
         return nextDay
 
     })
-    console.log(helperArray)
-    const nextDaysData = allDaysData.filter((n) => {
-        return (n.date > today && n.time === "12:00:00")
-    })
-
-    return nextDaysData;
+    return helperArray;
 }
 
+//compare function - this will help with gets max and min temp
+function compareTemp(arg, param) {
+    let compareArray = []
+    if (param === "max") {
+        arg.map((e) => {
+            compareArray.push(e.tempMax)
+        })
+    }
+    if (param === "min") {
+        arg.map((e) => {
+            compareArray.push(e.tempMin)
+        })
+    }
+    if (param === "logo") {
+        arg.map((e) => {
+            compareArray.push(e.icon)
+        })
+    }
+    if (param === "desc") {
+        arg.map((e) => {
+            compareArray.push(e.desc)
+        })
+    }
+    return compareArray
+}
 
+function mostCommon(array) {
+    let counts = {}
+    let compare = 0;
+    let mostFrequent;
+    array.forEach((e) => {
+        let word = e;
+        if (counts[word] === undefined) {
+            counts[word] = 1;
+        } else {
+            counts[word] = counts[word] + 1;
+        }
+        if (counts[word] > compare) {
+            compare = counts[word];
+            mostFrequent = e;
+        }
+
+    })
+    return mostFrequent
+}
 //display weather data in small cards
 function showWeather(arg) {
     const nextDaysData = getNextDaysData(arg);
     for (let i = 0; i <= 3; i++) {
         smallCard[i].addEventListener("click", () => {
-            showMoreInfo(arg, nextDaysData, i)
+            showMoreInfo(arg, nextDaysData[i], i)
         })
-        maxTemps[i].textContent = nextDaysData[i].tempMax.toFixed(1)
-        icons[i].src = `http://openweathermap.org/img/wn/${nextDaysData[i].icon}@2x.png`,
-            icons[i].alt = nextDaysData[i].desc
-        icons[i].title = nextDaysData[i].desc
+        let maxValue = Math.max.apply(null, compareTemp(nextDaysData[i + 1], "max"))
+        let mostDesc = compareTemp(nextDaysData[i + 1], "desc") //+1 beacuse i will get data for today 
+        let mostIcon = compareTemp(nextDaysData[i + 1], "logo")
+        maxTemps[i].textContent = maxValue.toFixed(1)
+        icons[i].src = `http://openweathermap.org/img/wn/${mostCommon(mostIcon)}@2x.png`,
+            icons[i].alt = mostCommon(mostDesc)
+        icons[i].title = mostCommon(mostDesc)
     }
 }
 
