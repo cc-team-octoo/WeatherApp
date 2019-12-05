@@ -1,12 +1,9 @@
-// Do dodanie do HTML poniższy kod
-{/* <canvas id="line-chart" width="800" height="450"></canvas> */}
-
 function graphInChart(city) {
 
     const dateGraph = [];
     const tempGraph = [];
 
-    fetch(  `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=4e687fa0129ef13f04e5dac8867f62ca`
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=4e687fa0129ef13f04e5dac8867f62ca`
             // `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=4e687fa0129ef13f04e5dac8867f62ca&units=metric`
             // Poniżej oryginalny link
         )
@@ -31,12 +28,15 @@ function graphInChart(city) {
                         options: {
                             title: {
                                 display: true,
-                                text: 'Wykres temperatury'
+                                text: 'temperature graph'
                             }
                         }
                     });
                 }
             });
+        })
+        .catch(err => {
+            console.log("err")
         })
 }
 

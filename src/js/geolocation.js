@@ -4,21 +4,19 @@ import getData from "./fetch.js"
 import showWheater from "./showWeather"
 import showCurrentWeather from "./showCurrentWeather"
 
-const apiKey=`4e687fa0129ef13f04e5dac8867f62ca`
+const apiKey = `4e687fa0129ef13f04e5dac8867f62ca`
 const geolocation = () => {
-    let userPosition={};
-    const getUserPostion=window.navigator.geolocation.getCurrentPosition(
-       (position) => {
-            userPosition={
-                latitude:position.coords.latitude,
-                longitude:position.coords.longitude,
-            }                
-            console.log("--Geolocation - fetch from user")
-            getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}&units=metric`,showWheater)
-            getData(`http:api.openweathermap.org/data/2.5/weather?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}&units=metric`,showCurrentWeather)
-            console.log("--------")
+    let userPosition = {};
+    window.navigator.geolocation.getCurrentPosition(
+        (position) => {
+            userPosition = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+            }
+            getData(`http://api.openweathermap.org/data/2.5/forecast?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}&units=metric`, showWheater)
+            getData(`http:api.openweathermap.org/data/2.5/weather?lat=${userPosition.latitude}&lon=${userPosition.longitude}&appid=${apiKey}&units=metric`, showCurrentWeather)
         },
         (error) => console.log(error, "Please allow to share your location")
-)
+    )
 }
 export default geolocation;
