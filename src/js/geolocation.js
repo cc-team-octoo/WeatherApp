@@ -7,7 +7,7 @@ import showCurrentWeather from "./showCurrentWeather"
 const apiKey = `4e687fa0129ef13f04e5dac8867f62ca`
 const geolocation = () => {
     let userPosition = {};
-    const getUserPostion = window.navigator.geolocation.getCurrentPosition(
+    window.navigator.geolocation.getCurrentPosition(
         (position) => {
             userPosition = {
                 latitude: position.coords.latitude,

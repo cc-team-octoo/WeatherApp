@@ -14,12 +14,14 @@ const form = document.querySelector(".inputs");
 searchBtn.addEventListener('click', () => {
     askForData(form.elements.namedItem("js_inputType").value,
         form.elements.namedItem("js_textInputType").value,
-        form.elements.namedItem("js_textInputType2").value);
+        form.elements.namedItem("js_textInputType2").value,
+        form.elements.namedItem("js_countryCode").value)
 })
 
 //window onload functions
 countriesCodes(); //generate codes for country input
 displayDates();
-askForData("City", "Poznań"); //default query for Poznań
-//graphInChart("Poznań");
+askForData("City", "Poznań", "", "pl"); //default query for Poznań
+graphInChart("Poznań");
 geolocation(); //get weather data based on current geolocation after giving permission
+// test : askForData("Circle", "24", "56", "pl"); 

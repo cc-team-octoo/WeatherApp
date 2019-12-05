@@ -1,5 +1,4 @@
 import graphInChart from "./graphInChart";
-
 const currentCity = document.getElementById("js_currentCity");
 const currentTemperature = document.getElementById("js_midTemp");
 const weatherDesc = document.getElementById("js_description");
@@ -20,5 +19,4 @@ const showCurrentWeather = arg => {
     currentHumidity.innerText = arg.main.humidity;
     graphInChart(arg.name);
 }
-
 export default showCurrentWeather;

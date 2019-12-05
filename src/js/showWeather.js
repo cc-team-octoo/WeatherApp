@@ -1,3 +1,4 @@
+import * as compareFunctions from './compareData.js'
 import showMoreInfo from "./showMoreInfo"
 const smallCard = document.querySelectorAll('.smallCard')
 const icons = document.querySelectorAll('.js_smallCard__icon');
@@ -48,65 +49,24 @@ function getNextDaysData(arg) {
     return helperArray;
 }
 
-//compare function - this will help with gets max and min temp
-function compareTemp(arg, param) {
-    let compareArray = []
-    if (param === "max") {
-        arg.map((e) => {
-            compareArray.push(e.tempMax)
-        })
-    }
-    if (param === "min") {
-        arg.map((e) => {
-            compareArray.push(e.tempMin)
-        })
-    }
-    if (param === "logo") {
-        arg.map((e) => {
-            compareArray.push(e.icon)
-        })
-    }
-    if (param === "desc") {
-        arg.map((e) => {
-            compareArray.push(e.desc)
-        })
-    }
-    return compareArray
-}
 
-function mostCommon(array) {
-    let counts = {}
-    let compare = 0;
-    let mostFrequent;
-    array.forEach((e) => {
-        let word = e;
-        if (counts[word] === undefined) {
-            counts[word] = 1;
-        } else {
-            counts[word] = counts[word] + 1;
-        }
-        if (counts[word] > compare) {
-            compare = counts[word];
-            mostFrequent = e;
-        }
 
-    })
-    return mostFrequent
-}
+
+
 //display weather data in small cards
 function showWeather(arg) {
     const nextDaysData = getNextDaysData(arg);
     for (let i = 0; i <= 3; i++) {
         smallCard[i].addEventListener("click", () => {
-            showMoreInfo(arg, nextDaysData[i], i)
+            showMoreInfo(arg, nextDaysData, i);
         })
-        let maxValue = Math.max.apply(null, compareTemp(nextDaysData[i + 1], "max"))
-        let mostDesc = compareTemp(nextDaysData[i + 1], "desc") //+1 beacuse i will get data for today 
-        let mostIcon = compareTemp(nextDaysData[i + 1], "logo")
+        let maxValue = Math.max.apply(null, compareFunctions.compareTemp(nextDaysData[i + 1], "max"));
+        let mostDesc = compareFunctions.compareTemp(nextDaysData[i + 1], "desc");//+1 beacuse i will get data for today 
+        let mostIcon = compareFunctions.compareTemp(nextDaysData[i + 1], "logo");
         maxTemps[i].textContent = maxValue.toFixed(1)
-        icons[i].src = `http://openweathermap.org/img/wn/${mostCommon(mostIcon)}@2x.png`,
-            icons[i].alt = mostCommon(mostDesc)
-        icons[i].title = mostCommon(mostDesc)
+        icons[i].src = `http://openweathermap.org/img/wn/${compareFunctions.mostCommon(mostIcon)}@2x.png`;
+        icons[i].alt = compareFunctions.mostCommon(mostDesc);
+        icons[i].title = compareFunctions.mostCommon(mostDesc);
     }
 }
 
